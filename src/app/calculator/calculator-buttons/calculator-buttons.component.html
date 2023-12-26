@@ -1,0 +1,55 @@
+<div class="bg-white dark:bg-black flex justify-center items-center"> <!--Background-->
+  <div class="grid grid-cols-4 gap-3"> <!--Buttons container-->
+
+    <div *ngIf="(stringOfMath.length <= 0 || stringOfMath === '0'); then AC else C"></div>
+    <ng-template #AC>
+      <button class="top-btn" (click)="clearMath()"><span>AC</span></button>
+    </ng-template>
+    <ng-template #C>
+      <button class="top-btn" (click)="clearMath()">C</button>
+    </ng-template>
+
+
+    <button class="top-btn" (click)="getSqrt()">
+      <img class="block m-auto" width="40" height="40" src="https://img.icons8.com/ios/50/square-root.png"
+           alt="square-root"/>
+    </button>
+    <button class="top-btn" (click)="getPercentage()">%</button>
+    <button class="orange-btn" (click)="enterNumber(' / ')">/</button>
+
+    <button class="btn-numbers" (click)="enterNumber('7')">7</button>
+    <button class="btn-numbers" (click)="enterNumber('8')">8</button>
+    <button class="btn-numbers" (click)="enterNumber('9')">9</button>
+    <button class="orange-btn" (click)="enterNumber(' * ')">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+           data-slot="icon" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <button class="btn-numbers" (click)="enterNumber('4')">4</button>
+    <button class="btn-numbers" (click)="enterNumber('5')">5</button>
+    <button class="btn-numbers" (click)="enterNumber('6')">6</button>
+    <button class="orange-btn" (click)="enterNumber(' - ')">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+           data-slot="icon" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14"/>
+      </svg>
+    </button>
+
+    <button class="btn-numbers" (click)="enterNumber('1')">1</button>
+    <button class="btn-numbers" (click)="enterNumber('2')">2</button>
+    <button class="btn-numbers" (click)="enterNumber('3')">3</button>
+    <button class="orange-btn" (click)="enterNumber(' + ')">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+           data-slot="icon" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
+      </svg>
+    </button>
+
+    <button class="btn-numbers col-span-2" (click)="enterNumber('0')">0</button>
+    <button class="btn-numbers" (click)="enterNumber('.')">.</button>
+    <button class="orange-btn" (click)="doMath()">=</button>
+
+  </div>
+</div>

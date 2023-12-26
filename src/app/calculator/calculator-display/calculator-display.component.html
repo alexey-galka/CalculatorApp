@@ -1,0 +1,15 @@
+<div class="bg-black min-w-full">
+  <div class="text-white inline-flex flex-col min-w-full items-end">
+    <div class="mt-10 max-w-72">
+      <p class="font-extralight text-sm text-wrap text-right">
+        {{calcService.receiveStringOfNumbers() | async}}
+      </p>
+    </div>
+
+    <div class="mt-10 mb-3">
+      <p class="text-5xl font-thin">
+        {{calcService.receiveFinalResult() | async}}
+      </p>
+    </div>
+  </div>
+</div>
